@@ -6,7 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/piham/ThemeProvider";
 import { AuthProvider } from "@/hooks/useAuth";
 import { SiteContentProvider } from "@/hooks/useSiteContent";
-import { I18nProvider } from "@/hooks/useI18n";
+
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -30,7 +30,6 @@ const App = () => (
         <BrowserRouter>
           <AuthProvider>
             <SiteContentProvider>
-            <I18nProvider>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/services/:slug" element={<ServiceDetail />} />
@@ -44,7 +43,6 @@ const App = () => (
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
-            </I18nProvider>
             </SiteContentProvider>
           </AuthProvider>
         </BrowserRouter>

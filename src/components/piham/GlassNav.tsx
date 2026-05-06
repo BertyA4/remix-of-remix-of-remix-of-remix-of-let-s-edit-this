@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useScroll, useTransform, useMotionTemplate } f
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MagneticButton } from "./MagneticButton";
 import { ThemeToggle } from "./ThemeToggle";
-import { LanguageSwitcher } from "./LanguageSwitcher";
+
 import { useAuth } from "@/hooks/useAuth";
 import { useSiteContent } from "@/hooks/useSiteContent";
 
@@ -178,7 +178,6 @@ export const GlassNav = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-2">
-            <LanguageSwitcher />
             <ThemeToggle />
             {user ? (
               <>
@@ -212,7 +211,6 @@ export const GlassNav = () => {
           </div>
 
           <div className="md:hidden flex items-center gap-2">
-            <LanguageSwitcher />
             <ThemeToggle />
             <button
               onClick={() => setOpen((v) => !v)}
